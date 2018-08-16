@@ -1,6 +1,6 @@
 # Makefile for Docker Nginx PHP Composer MySQL
 
-include .env.example
+include .env
 
 # MySQL
 MYSQL_DUMPS_DIR=data/db/dumps
