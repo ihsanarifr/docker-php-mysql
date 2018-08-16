@@ -20,7 +20,7 @@ services:
     image: mysql:${MYSQL_VERSION}
     restart: always
     ports: 
-      - "3306:3306"
+      - "8989:3306"
     volumes:
       - ./db:/var/lib/mysql
     environment:
