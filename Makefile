@@ -24,7 +24,7 @@ composer-up:
 	@docker run --rm -v $(shell pwd)/web/app:/app composer update
 
 docker-start: init
-	docker-compose up -d
+	docker-compose up -d --build
 
 docker-stop:
 	@docker-compose down -v
