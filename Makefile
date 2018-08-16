@@ -2,9 +2,6 @@
 
 include .env
 
-# MySQL
-MYSQL_DUMPS_DIR=data/db/dumps
-
 help:
 	@echo ""
 	@echo "usage: make COMMAND"
@@ -32,11 +29,3 @@ docker-stop:
 
 logs:
 	@docker-compose logs -f
-
-mysql-dump:
-	@mkdir -p $(MYSQL_DUMPS_DIR)
-	@docker exec $(shell docker-compose ps -q mysqldb) mysqldump --all-databases -u"$(MYSQL_ROOT_USER)" -p"$(MYSQL_ROOT_PASSWORD)" > $(MYSQL_DUMPS_DIR)/db.sql 2>/dev/null
-	@make resetOwner
-
-mysql-restore:
-	@docker exec -i $(shell docker-compose ps -q mysqldb) mysql -u"$(MYSQL_ROOT_USER)" -p"$(MYSQL_ROOT_PASSWORD)" < $(MYSQL_DUMPS_DIR)/db.sql 2>/dev/null

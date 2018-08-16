@@ -18,9 +18,5 @@ before_script:
   - sudo make docker-start
   - sleep 2m
 
-script:
-  - sudo make mysql-dump
-  - sudo make mysql-restore
-
 after_script:
   - sudo make docker-stop
