@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /home/ihsan/Documents/htdocs:/var/www/html
+      - ${VOLUME_HTDOCS}:/var/www/html
     links:
       - db
     networks:
