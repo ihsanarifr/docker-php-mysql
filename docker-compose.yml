@@ -5,7 +5,7 @@ services:
     container_name: ${CONTAINER_NAME_WEB}
     build: ./web
     ports:
-      - "80:80"
+      - "8088:80"
       - "443:443"
     volumes:
       - ${VOLUME_HTDOCS}:/var/www/html
@@ -20,7 +20,7 @@ services:
     image: mysql:${MYSQL_VERSION}
     restart: always
     ports: 
-      - "8989:3306"
+      - "3306:3306"
     volumes:
       - ./db:/var/lib/mysql
     environment:
