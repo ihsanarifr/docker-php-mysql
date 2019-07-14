@@ -5,10 +5,10 @@ RUN apt-get update -y && apt-get install -y libpng-dev curl libcurl4-openssl-dev
 # documentation https://github.com/docker-library/php/issues/75
 RUN apt-get install zip unzip
 RUN apt-get install -y git
-RUN apt install -y libmcrypt-dev
-RUN apt install -y libicu-dev
+RUN apt-get install -y libmcrypt-dev
+RUN apt-get install -y libicu-dev
 RUN docker-php-ext-install -j$(nproc) intl
-RUN apt install -y mysql-client
+RUN apt-get install -y mysql-client
 RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-install session
 RUN docker-php-ext-install json
